@@ -2,6 +2,7 @@
   import { personal, projects, experiences } from '$lib/data';
   import { Github, Linkedin, Mail, ExternalLink } from 'lucide-svelte';
   import avatar from '$lib/assets/avatar.jpg';
+  import Button from '$lib/components/button.svelte';
 </script>
 
 <svelte:head>
@@ -28,9 +29,9 @@
       </p>
 
       <div class="flex flex-wrap gap-4 items-center">
-        <a href="/about" class="px-6 py-3 text-white text-sm font-medium rounded-full hover:opacity-90 transition-opacity" style="background: var(--accent);">
+        <Button href="/about" class="rounded-full px-6 py-3 text-sm" style="background: #e63946; color: white;">
           View My Work
-        </a>
+        </Button>
         <div class="flex gap-4 items-center">
           <a href="mailto:{personal.email}" class="text-(--muted) hover:text-(--accent) transition-colors" aria-label="Email"><Mail size={20}/></a>
           <a href={personal.github} target="_blank" rel="noopener" class="text-(--muted) hover:text-(--accent) transition-colors" aria-label="GitHub"><Github size={20}/></a>
@@ -42,9 +43,7 @@
     <!-- Right: Avatar -->
     <div class="shrink-0 flex justify-center">
       <div class="relative">
-        <!-- Glow behind -->
-        <div class="absolute inset-0 rounded-[60%_40%_60%_40%/50%_50%_50%_50%] blur-2xl opacity-30" style="background: var(--accent);"></div>
-        <!-- Photo -->
+        <div class="absolute inset-0 rounded-[60%_40%_60%_40%/50%_50%_50%_50%] blur-2xl opacity-30" style="background: #e63946;"></div>
         <img
           src={avatar}
           alt={personal.name}

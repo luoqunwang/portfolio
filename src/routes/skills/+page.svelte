@@ -24,8 +24,10 @@
     {#each categories as cat}
       <button
         onclick={() => (active = cat)}
-        class="px-4 py-1.5 rounded-full text-sm font-['JetBrains_Mono'] transition-all duration-200 {active === cat ? 'text-white' : 'text-(--muted) hover:bg-white/10'}"
-        style={active === cat ? 'background: var(--accent);' : 'background: rgba(255,255,255,0.05);'}
+        class="px-4 py-1.5 rounded-full text-sm font-['JetBrains_Mono'] transition-all duration-200"
+        style={active === cat
+          ? 'background: #e63946; color: white;'
+          : 'background: rgba(255,255,255,0.05); color: rgba(255,255,255,0.5);'}
       >
         {cat}
       </button>

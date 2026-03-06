@@ -1,0 +1,40 @@
+@import 'tailwindcss';
+
+@layer base {
+	:root {
+		--ink: #1a1a2e;
+		--cream: #f5f0e8;
+		--accent: #e63946;
+		--gold: #f4a261;
+		--muted: #8b8fa8;
+	}
+
+	* { box-sizing: border-box; }
+	html { scroll-behavior: smooth; }
+
+	body {
+		background-color: var(--ink);
+		color: var(--cream);
+		font-family: 'DM Sans', sans-serif;
+		overflow-x: hidden;
+	}
+
+	::selection { background: var(--accent); color: var(--cream); }
+	::-webkit-scrollbar { width: 4px; }
+	::-webkit-scrollbar-track { background: var(--ink); }
+	::-webkit-scrollbar-thumb { background: var(--accent); border-radius: 2px; }
+}
+
+@layer utilities {
+	.text-gradient {
+		background: linear-gradient(135deg, #f5f0e8 0%, #f4a261 50%, #e63946 100%);
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+		background-clip: text;
+	}
+}
+
+@keyframes fadeUp {
+	from { opacity: 0; transform: translateY(30px); }
+	to { opacity: 1; transform: translateY(0); }
+}
